@@ -1,12 +1,12 @@
 body{
     background: lightblue;
+    margin: 0;
 }
 
 body * {
     font-family: Arial, Helvetica, sans-serif;
+
 }
-
-
 .align-helper{
     height: 100%;
     vertical-align: middle;
@@ -28,7 +28,9 @@ body * {
 
 
 .main-window {
-    margin-top: 150px;
+    margin: 150px auto 0;
+    width: 1000px;
+    
 }
 
 .btn{
@@ -95,7 +97,7 @@ body * {
 
 .main-window .listed-items-container .list-items  li{
     list-style-type:decimal;
-    width: 90%;
+    width: calc(100% - 32px);;
     height: 50px;
     border: 2px solid rgb(246, 144, 144);
     margin: 16px;
@@ -149,6 +151,20 @@ body * {
 
 .main-window .listed-items-container .add-button .text-input {
     width: 300px;
+    border: 0; 
+    padding-top: 3px;
+    font-size: 16px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.main-window .listed-items-container .add-button:hover .text-input {
+    background: lightblue;
+    border-bottom: 1px solid white;
+}
+
+.main-window .listed-items-container .add-button .text-input:focus {
+    outline: 0;
+    
 }
 
 
@@ -160,3 +176,36 @@ body * {
     margin-left: 5px;
 }
 
+
+.error-message{
+    width:400px;
+    top: 0;
+    position: absolute;
+    display: none;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid lightcoral;
+
+    background: rgb(224, 223, 223);
+    border-top: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-box-shadow: 9px -8px 21px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 9px -8px 21px 0px rgba(0,0,0,0.15);
+    box-shadow: 9px -8px 21px 0px rgba(0,0,0,0.15);
+}
+.noclick-background{
+    position: fixed;
+    background-color: black;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /*
+    I can do this without the !important, but then I'll have to change the location of this,
+    because the javascript left css rule move me also
+    */
+    top:0 !important;
+    left: 0 !important;
+
+}
